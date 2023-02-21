@@ -1,6 +1,6 @@
 <div align="center">
 
-Sookmyung APPS
+### Sookmyung APPS
 # 2023-01 Web Basic Study
 💻 10기 신입 부원을 위한 웹 프론트엔드 기초 스터디 💻
 
