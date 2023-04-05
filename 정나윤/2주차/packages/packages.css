@@ -19,6 +19,7 @@ header {
     border: 4px solid #0e4f1f;
     border-left: none;
     position: relative;
+    z-index: 9;
 }
 
 .package:hover,
@@ -36,6 +37,7 @@ header {
 }
 
 .package__badge {
+    position: absolute;
     z-index: 10;
     top: 0;
     right: 0;

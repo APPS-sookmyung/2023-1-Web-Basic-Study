@@ -8,16 +8,6 @@
     margin-top: 40px;
 }
 
-#slogun{
-    /* background-color: #ffcede; */
-    width: 400px;
-    height: 100px;
-    padding: 30px;
-    position: absolute;
-    left: 10px;
-    top: 60%;
-}
-
 .section-title {
     color: #2ddf5c;
     text-align: center;
@@ -25,8 +15,11 @@
 }
 
 #product-overview h1 {
-    color: white;
+    color: black;
     font-family: 'Anton', sans-serif;
+    position: absolute;
+    left: 30px;
+    top: 60%;
 }
 
 .plan__list {
