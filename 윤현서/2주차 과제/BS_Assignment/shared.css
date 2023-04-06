@@ -15,7 +15,7 @@ body {
     background: #2ddf5c;
     padding: 8px 16px;
     /* 7번 */
-    z-index: 4;
+    z-index: 2;
 }
 
 .main-header > div {

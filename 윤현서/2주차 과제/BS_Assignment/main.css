@@ -22,7 +22,7 @@
     /* 2번 position/px */
     /* position: relative; top: 450px;     */
     /* 4번  position/% */
-    position: relative; top: 90%;
+    position: absolute; top: 90%;
     
 }
 
