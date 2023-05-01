@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        const testArray = [{
+            name: “조영서”,
+            score: 100
+        }, {
+            name: “신진영”,
+            score: 90
+        }, {
+            name: “오지수”,
+            score: 80
+        }, {
+            name: “서정연”,
+            score: 70
+        }, ];
+        const ResultMap = new Map();
+        for (let i = 0; i < testArray.length; i++) {
+            ResultMap.set(testArray[i].name, testArray[i].score);
+        }
+        console.log(ResultMap);
+
+        document.getElementById("demo").innerHTML = str
+    </script>
+</body>
+
+</html>

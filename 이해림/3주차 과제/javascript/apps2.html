@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        function solution(n, arr) {
+            var answer = 0;
+            arr.sort((a, b) => (b[0] + b[1]) - (a[0] + a[1]));
+
+            for (let i = 0, len = arr.length; i < len; i++) {
+                let rest = n - arr[i][0] / 2 - arr[i][1];
+                let cnt = 1;
+                for (let j = len - 1; j >= 0; j--) {
+                    if (j === i) {
+                        continue;
+                    }
+                    const sum = arr[j][0] + arr[j][1];
+                    if (sum <= rest) {
+                        rest -= sum;
+                        cnt++;
+                    } else {
+                        answer = Math.max(answer, cnt);
+                        break;
+                    }
+                }
+            }
+        }
+        let arr = [
+            [6000, 6000],
+            [2000, 2000],
+            [4000, 3000],
+            [4000, 5000],
+            [10000, 3000],
+        ];
+        console.log(solution(28000, arr)) //4
+
+        document.getElementById("demo").innerHTML = str
+    </script>
+</body>
+
+</html>
