@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func(n, arr){
+            let arrTotal = [];
+            for(let i=0; i<arr.length; i++){
+                howMany = 0;
+                howMuch = 0;
+                howMuch += (arr[i][0]/2 + arr[i][1]);
+                howMany++;
+                for(let j=0; j<arr.length; j++){
+                    if(howMuch >= n) break;
+                    howMuch += (arr[j][0] + arr[j][1]);
+                    howMany++;
+                }
+                howMuch -= (arr[i][0] + arr[i][1]);
+                howMany--;
+                arrTotal.push(howMany);
+            }
+            max = 0;
+            for(let i=0; i<arr.length; i++){
+                if(arrTotal[i] >= max) max = arrTotal[i];
+            }
+            return max;
+        }
+        let arr = [[6000,6000], [2000,2000], [4000,3000], [4000,5000], [10000,3000]];
+        console.log(func(28000, arr)) //4
+    </script>
+</body>
+</html>
