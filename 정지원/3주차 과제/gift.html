@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>졸업선물</title>
+</head>
+<body>
+  <script>
+    function maxNum(n, products) {
+      let maxnum = 0;
+      for (let i = 0; i < products.length; i++) {
+        let discount = products[i][0] / 2; // 할인가격
+        let total = discount + products[i][1]; // 할인가격+배송비
+        if (total <= n) {
+          maxnum++; // 구매 가능한 상품 개수 1씩 증가
+          n -= totalPrice; // 예산-구매상품
+        }
+      }
+      return maxnum;
+    }
+
+    let arr = [[6000,6000], [2000,2000], [4000,3000], [4000,5000], [10000,3000]];
+    console.log(maxNum(28000,arr));
+  </script>
+</body>
+</html>

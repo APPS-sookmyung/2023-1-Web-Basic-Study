@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>피라미드 출력</title>
+  <script>
+    function pyramid(rows) {
+      let output = '';
+      for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < rows - i - 1; j++) {
+          output += ' ';
+        }
+        for (let k = 0; k < 2 * i + 1; k++) {
+          output += '*';
+        }
+        output += '<br>';
+      }
+      document.getElementById('stars').innerHTML = output;
+    }
+    pyramid(4);
+  </script>
+</head>
+<body>
+  <div id="stars"></div>
+</body>
+</html>
