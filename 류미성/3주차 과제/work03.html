@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      const testArray = [
+        {
+          name: '조영서',
+          score: 100,
+        },
+        {
+          name: '신진영',
+          score: 90,
+        },
+        {
+          name: '오지수',
+          score: 80,
+        },
+        {
+          name: '서정연',
+          score: 70,
+        },
+      ];
+
+      const ResultMap = testArray
+        .filter((student) => student.score >= 90)
+        .map((student) => student.name);
+
+      document.write(ResultMap);
+    </script>
+  </body>
+</html>

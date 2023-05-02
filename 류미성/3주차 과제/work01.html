@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const lineCount = 4;
+      let star = '';
+
+      for (i = 0; i < lineCount; i++) {
+        for (j = lineCount; j > i; j--) {
+          star += '&nbsp;';
+        }
+
+        for (k = 0; k < 2 * i + 1; k++) {
+          star += '*';
+        }
+
+        star += '<br />';
+      }
+
+      document.write(star);
+    </script>
+  </body>
+</html>
