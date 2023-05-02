@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Task(n,arr) {
+            arr.sort((a, b) => a[0] - b[0]); //최대한 많은 상품을 살 수 있게 가격이 낮은 순서로 정렬
+        let count=0;
+        for (let i=0; i<arr.length; i++){
+            let price=arr[i][0]/2+arr[i][1];
+            n-=price;
+            if (n<0){
+                break; //예산 초과시 구매 불가
+            }
+            count++;
+        } 
+        return count;
+        }
+        let arr = [[6000,6000], [2000,2000], [4000,3000], [4000,5000], [10000,3000]];
+        console.log(Task(28000, arr))
+
+    </script>
+</body>
+</html>
