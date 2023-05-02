@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function present(n, arr){
+            let answer = [0, 0, 0, 0, 0];
+            let len = arr.length;
+            arr.sort((a,b) => (a[0]+a[1]) - (b[0]+b[1]));
+            for (let i=0; i<len; i++){
+                let sum = 0;
+                let cnt = 1;
+                sum = arr[i][0]/2 + arr[i][1]
+                for (let j=0; j<=len; j++){
+                    if (j===i) continue;
+                    if (sum <= n){;
+                        sum += arr[j][0] + arr[j][1];
+                        if (sum > n) continue
+                        cnt++;
+                    }
+                    else answer[i] = cnt;
+                }
+            }
+            return Math.max(...answer)
+        }
+        let arr = [[6000,6000], [2000,2000], [4000,3000], [4000,5000], [10000,3000]];
+        console.log(present(28000, arr)) 
+    </script>
+</body>
+</html>
