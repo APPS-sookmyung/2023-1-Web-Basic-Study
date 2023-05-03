@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const testArray = [{name: "조영서", score: 100}, {name: "신진영", score: 90}, {name: "오지수", score: 80}, {name: "서정연", score: 70}];
+        const ResultMap = testArray.filter(student => student.score >= 90).map(student => student.name);
+        console.log(ResultMap);
+    </script>
+</body>
+</html>
