@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1번 과제</title>
+</head>
+<body>
+    <script>
+        
+        let n = prompt("예산을 알려주세요:"); // 예산
+        let arr = [[6000,6000], [2000,2000], [4000,3000], [4000,5000], [10000,3000]]; //선물 리스트 
+
+        function present(n, arr) {
+            sum_price = 0;
+            sum_deliv_price = 0;
+            total = 0;
+            present_num = 0;
+            let pick = prompt("50% 할인을 적용받을 상품이 몇 번째 상품인가요?"); //js는 promt로 입력받아도, 문자로 인식하지 않고 숫자로 인식
+            //배열에서 한쌍 마다의 합(cost)을 구하고 이를 정렬하고, 차례대로 더해가면서 예산의 크기와 비교하는 알고리즘 구현
+            arr[pick-1][0] = arr[pick-1][0] * 0.5;
+            arr.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1])); //sort 로 오름차 구현(a는 arr[0]이고 b는 arr[1]임.)
+            //즉, a[0]+a[1] = arr[0] 을 의미함.
+            //'=>' 를 통해 (a,b) 리턴을 정의함. 그리고 그 값들이 sort 메서드에 적용되어서 정렬됨.
+
+            for (let i = 0; i < arr.length; i++) {
+                const cost = arr[i][0] + arr[i][1];
+                if (total + cost <= n) {
+                    total += cost;
+                    present_num++;
+                } 
+                else {
+                    break;
+                }
+            }
+            return present_num;
+        }
+
+        let result1 = present(n, arr);
+        document.write("구매 가능한 최대 선물 개수: " +result1);
+    </script>
+</body>
+</html>

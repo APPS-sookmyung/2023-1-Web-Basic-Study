@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3번 과제</title>
+</head>
+<body>
+    <script>
+        
+        const testArray = [{name:'조영서', score: 100},  {name: '신진영', score: 90}, {name: '오지수', score: 80}, {name: '서정연', score: 70}];
+        const ResultMap=testArray.filter(item=>item.score>=90).map(item=>item.name);
+        // filter 로 새로운 배열을 만들고,,, 새로 만든 배열에 map을 사용해서 적용시키기(items 에서 name 만 가지고 오기)
+        console.log(ResultMap);
+    </script>
+</body>
+</html>
