@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        const copiedArr = arr.slice();
+        const arrLength = copiedArr.length;
+        let maxCount = 0;
+
+        copiedArr.sort((a, b) => b[0] + b[1] - (a[0] + a[1]));
+
+        for (let i = 0; i < arrLength; i++) {
+          let restMoney = n - copiedArr[i][0] * 0.5 - arr[i][1];
+          let count = 1;
+
+          for (let j = arrLength - 1; j >= 0; j--) {
+            if (i === j) {
+              continue;
+            }
+
+            const sumPrice = copiedArr[j][0] + copiedArr[j][1];
+
+            if (sumPrice <= restMoney) {
+              restMoney -= sumPrice;
+              count += 1;
+            } else {
+              maxCount = Math.max(maxCount, count);
+              break;
+            }
+          }
+        }
+
+        return maxCount;
+      }
+
+      let arr = [
+        [6000, 6000],
+        [2000, 2000],
+        [4000, 3000],
+        [4000, 5000],
+        [10000, 3000],
+      ];
+
+      document.write(solution(28000, arr));
+    </script>
+  </body>
+</html>
