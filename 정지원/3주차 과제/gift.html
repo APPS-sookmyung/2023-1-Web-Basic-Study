@@ -12,7 +12,7 @@
         let total = discount + products[i][1]; // 할인가격+배송비
         if (total <= n) {
           maxnum++; // 구매 가능한 상품 개수 1씩 증가
-          n -= totalPrice; // 예산-구매상품
+          n -= total; // 예산-구매상품
         }
       }
       return maxnum;
