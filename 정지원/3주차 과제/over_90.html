@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>90점이 넘는 학생의 이름만 가져와 출력하기</title>
+</head>
+<body>
+  <script>
+    const testArray = [
+      {name: "조영서", score: 100},
+      {name: "신진영", score: 90},
+      {name: "오지수", score: 80},
+      {name: "서정연", score: 70}
+    ];
+
+    const ResultMap = testArray.filter(student => student.score > 90).map(student => student.name);
+    //90점 이상인 학생 이름 가져와서 배열 만들기
+    console.log(ResultMap);
+
+  </script>
+</body>
+</html>
