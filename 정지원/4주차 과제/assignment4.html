@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment4-정지원</title>
+	<style type="text/css">
+		body {
+			background-color: #ef5777;
+			background-image: linear-gradient(to right, #ef5777, #575fcf);
+			height: 100vh; /*화면 전체 높이만큼 채우기*/
+			display: flex;
+			align-items: center; /*수직중앙정렬*/
+			justify-content: center; /*수평중앙정렬*/
+			flex-direction: column; /*자식 요소 배치 세로로*/
+			font-family: sans-serif;
+			color: white;
+		}
+
+		button {
+			border: none;
+			background-color: white;
+			color: black;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="randomColor()">Give me color</button>
+	
+	<script type="text/javascript">
+		function randomColor() {
+	const colors = [
+		"#ef5777","#575fcf","#4bcffa","#34e7e4","#0be881","#f53b57",
+		"#3c40c6","#0fbcf9","#00d8d6","#05c46b","#ffc048","#ffdd59",
+		"#ff5e57","#d2dae2","#485460","#ffa801","#ffd32a","#ff3f34"
+	];
+	// colors 배열에서 무작위로 선택한 색상을 반환
+	const randomColor1 = colors[Math.floor(Math.random() * colors.length)];
+	let randomColor2;
+	do {
+		randomColor2 = colors[Math.floor(Math.random() * colors.length)];
+	} while (randomColor2 === randomColor1);
+	document.body.style.backgroundColor = randomColor1;
+	document.body.style.backgroundImage = `linear-gradient(to right, ${randomColor1}, ${randomColor2})`;
+}
+
+	</script>
+</body>
+</html>
