@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 2 - 5px);
+    height: 400px;
+    background: linear-gradient(to right, #ffdd59, #0fbcf9);
+  }
+  
