@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function solution(n,arr){
+            let answer = 0;
+            arr.sort((a,b) => (b[0] + b[1]) - (a[0]+a[1]));
+
+            for(let i=0, len = arr.length; i<len; i++) {
+                let rest=n-arr[i][0]/2 -arr[i][1];
+                let cnt = 1;
+                
+                for(let j = len -1; i>=0; j--){
+                    if(j===i){
+                        continue;
+                    }
+                    const sum= arr[j][0] + arr[j][1];
+                    if(sum <= rest) {
+                        rest -= sum;
+                        cnt++;
+                    } else {
+                        answer = Math.max(anser, cnt);
+                        break;
+                    }
+                }
+            }
+            return answer;
+        }
+        let arr=[
+            [6000,6000],
+            [2000,2000],
+            [4000,3000],
+            [4000,5000],
+            [10000,3000],
+        ];
+        console.log(solution(28000,arr));
+    </script>
+</body>
+</html>
