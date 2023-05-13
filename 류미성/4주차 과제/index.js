@@ -5,32 +5,35 @@ const colors = [
 ];
 
 function getRandomColor(colors){
-    const index = parseInt(Math.random() * (colors.length - 1));
-    return colors[index];
+  const index = parseInt(Math.random() * (colors.length));
+  
+  return colors[index];
 };
 
 function getTwoRandomColorList(){
-    return [getRandomColor(colors), getRandomColor(colors)];
+  return [getRandomColor(colors), getRandomColor(colors)];
 };
-
+  
 function handleCardBackgroundChange(element){
-    const [color1, color2] = getTwoRandomColorList();
-    element.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+  const [color1, color2] = getTwoRandomColorList();
+  
+  element.style.background = `linear-gradient(to right, ${color1}, ${color2})`;
 };
+  
+const container = document.querySelector('#container');
+  
+const CARD_COUNT = 4;
 
-const card1 = document.querySelector('#card-1');
-const card1Button = document.querySelector('#card-1_button');
+for (let i = 0; i < CARD_COUNT; i++) {
+  const cardElement = document.createElement('div');
+  const buttonElement = document.createElement('button');
 
-const card2 = document.querySelector('#card-2');
-const card2Button = document.querySelector('#card-2_button');
+  cardElement.classList.add('card');
 
-const card3 = document.querySelector('#card-3');
-const card3Button = document.querySelector('#card-3_button');
+  buttonElement.textContent = 'Give me color';
+  buttonElement.addEventListener('click', () => handleCardBackgroundChange(cardElement));
 
-const card4 = document.querySelector('#card-4');
-const card4Button = document.querySelector('#card-4_button');
-
-card1Button.addEventListener('click', () => handleCardBackgroundChange(card1));
-card2Button.addEventListener('click', () => handleCardBackgroundChange(card2));
-card3Button.addEventListener('click', () => handleCardBackgroundChange(card3));
-card4Button.addEventListener('click', () => handleCardBackgroundChange(card4));
+  cardElement.appendChild(buttonElement);
+  container.appendChild(cardElement);
+}
+  
