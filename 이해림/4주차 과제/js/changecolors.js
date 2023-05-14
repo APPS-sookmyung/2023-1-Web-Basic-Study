@@ -9,5 +9,5 @@ button.addEventListener("click", function() {
     const randomColor1 = colors[Math.floor(Math.random() * colors.length)];
     const randomColor2 = colors[Math.floor(Math.random() * colors.length)];
     const gradient = `linear-gradient(to right, ${randomColor1}, ${randomColor2})`;
-    body.style.backgroundImage = gradient;
+    document.body.style.backgroundImage = gradient;
 });
