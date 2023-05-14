@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    function App() { const [colors, setColors] = React.useState(["#ef5777", "#575fcf"]); const handleClick = () => { const randomColor1 = Math.floor(Math.random() * 255); const randomColor2 = Math.floor(Math.random() * 255); const newColors = [ `rgb(${randomColor1},
+    ${randomColor1}, ${randomColor2})`, `rgb(${randomColor2}, ${randomColor2}, ${randomColor1})`, ]; setColors(newColors); }; const gradient = `linear-gradient(to right, ${colors[0]}, ${colors[1]})`; return (
+    <div style={{ background: gradient, height: "100vh" }}>
+        <button className="changecolors" id="btn" onClick={handleClick}>
+        Click me
+      </button>
+    </div>
+    ); } ReactDOM.render(
+
+    <App />, document.getElementById("root"));
+
+
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    // 상태 변수 minutes와 그 값을 변경할 함수 setMinutes를 useState를 사용하여 선언 const[minutes, setMinutes] = React.useState(); function App() { const[minutes, setMinutes] = React.useState(); // onChange 이벤트 핸들러 함수, 입력된 값을 상태 변수 minutes로 업데이트 const onChange = (event) => {
+    setMinutes(event.target.value); }; return(
+    <div>
+        <h1 className="hi">Super Converter</h1>
+        <label htmlFor="minutes">Minutes</label>
+        <input value={minutes} id="minutes" placeholder="Minutes" type="number" onChange={onChange} />
+        <h4>You want yo convert {minutes}</h4>
+        <label htmlFor="hours">Hours</label>
+        <input id="hours" placeholder="Hours" type="number" />
+    </div>
+    ); } const root = document.getElementById("root"); ReactDOM.render(
+    <App />, root);
+</script>
+
+</html>
