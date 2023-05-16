@@ -1,0 +1,23 @@
+#1
+- Why React Js
+신기술을 배울 때 중요한 것
+1. 누가 이 기술을 사용하는지, 규모가 얼마나 큰지, 기업에게 기술이 얼마나 중요한지
+-> 상위 1만 개의 웹사이트 중 44%가량이 react JS를 사용 중
+(ex. 에어비엔비, 인스타그램, 페이스북 등등)
+2. 이 기술이 어디서부터 왔는가
+-> 페이스북에서 react JS를 만들고, 투자 중
+3. 거대한 커뮤니티
+-> react JS는 Javascript와 아주 가까움 -> 책, 코스의 양, 라이브러리, 가이브, 패키지, 직업, 채용이 거대함
+-> react Js를 기반으로 다른 것(framework)을 제작하는 생태계가 존재함
+
+#2
+- React JS VS 바닐라  JS
+- React JS는 UI를 interactive하게 만듦 = 웹사이트에 상호작용을 만듦
+- React JS는 HTML코드를 직접 작성하지 않고 Javascript, React JS를 이용해 element 생성
+(Javascript - element 생성, React JS - HTML로 번역)
+- React-dom은 라이브러리, 패키지로 모든 React element들을 HTML body에 둘 수 있도록 해줌
+- React JS는 업데이트가 필요한 element 업데이트 -> 유저에게 보여질 내용 컨트롤
+- JSX는 어플리케이션을 여러 가지 작은 요소로 나누어 관리할 수 있게 함 -> 보기 쉽게 코드를 관리한 후 렌더링하는 방식
+- React JS는 UI에서 바뀐 부분만 업데이트
+
+
