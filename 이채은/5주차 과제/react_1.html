@@ -1,0 +1,51 @@
+<html lang="ko">
+<head>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+    <style>
+        div {
+            width: 2000x;
+            height:1000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+
+const colors = [
+  "#ef5777", "#575fcf", "#4bcffa", "#34e7e4", "#0be881", "#f53b57",
+  "#3c40c6", "#0fbcf9", "#00d8d6", "#05c46b", "#ffc048", "#ffdd59",
+  "#ff5e57", "#d2dae2", "#485460", "#ffa801", "#ffd32a", "#ff3f34"
+];
+const ColorChange = () => {
+  const [background, setBackground] = React.useState("linear-gradient(to right, #ef5777, #575fcf)");
+
+  const Clicking = () => {
+    const colorIndex1 = Math.floor(Math.random() * colors.length);
+    let colorIndex2 = Math.floor(Math.random() * colors.length);
+    while (colorIndex2 === colorIndex1) {
+      colorIndex2 = Math.floor(Math.random() * colors.length);
+    }
+    const color1 = colors[colorIndex1];
+    const color2 = colors[colorIndex2];
+    setBackground(`linear-gradient(to right, ${color1}, ${color2})`);
+  };
+
+  return (
+    <div>
+      <button onClick={Clicking}>색 변환 버튼</button>
+      <div style={{ background, transition: "background 0.5s ease-in-out" }}>
+        ''
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.render(<ColorChange />, root);
+</script>
+</html>
+
