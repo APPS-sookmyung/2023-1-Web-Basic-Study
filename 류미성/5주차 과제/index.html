@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/babel-standalone@6.26.0/babel.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+		<link rel="stylesheet" href="./src/styles/index.css" />
+	</head>
+	<body>
+		<div id="root"></div>
+	</body>
+	<script type="text/babel">
+		function App() {
+			const colors = [
+				"#ef5777",
+				"#575fcf",
+				"#4bcffa",
+				"#34e7e4",
+				"#Obe881",
+				"#f53657",
+				"#3c40c6",
+				"#0fbcf9",
+				"#00d8d6",
+				"#05c46b",
+				"#ffC048",
+				"#ffdd59",
+				"#ff5e57",
+				"#d2dae2",
+				"#485460",
+				"#ffa801",
+				"#ffd32a",
+				"#ff3f34",
+			];
+
+			const [gradientBackground, setGradientBackground] = React.useState();
+			const [count, setCount] = React.useState(0);
+
+			const getRandomColor = (colors) => {
+				const index = parseInt(Math.random() * colors.length);
+
+				return colors[index];
+			};
+
+			const getGradientBackground = () => {
+				return `linear-gradient(to right, ${getRandomColor(colors)}, ${getRandomColor(colors)})`;
+			};
+
+			const handleChangeColorButtonClick = () => {
+				setGradientBackground(
+					`linear-gradient(to right, ${getRandomColor(colors)}, ${getRandomColor(colors)})`
+				);
+				setCount((count) => count + 1);
+			};
+
+			return (
+				<div
+					className="layout"
+					style={{
+						background: gradientBackground,
+					}}
+				>
+					<div className="count-text">Total Clicks: {count}</div>
+					<button
+						type="button"
+						className="change-color-button"
+						onClick={handleChangeColorButtonClick}
+					>
+						Give me color
+					</button>
+				</div>
+			);
+		}
+
+		ReactDOM.render(<App />, root);
+	</script>
+</html>
