@@ -1,0 +1,74 @@
+<html lang="ko">
+<head>
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+</head>
+<body>
+    <div id="root"></div> 
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+
+    function ProFile({ name, image, job }) {
+        return (
+            <div
+                style={{
+                    border: "solid black 1px",
+                    display: "block",
+                    padding: "10px",
+                    margin: "10px",
+                    textAlign: "center",
+                    width: "300px",
+                    height: "450px",
+                    backgroundColor: "gray",
+                }}
+            >
+                <div
+                    style={{
+                        margin:"20px",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        height: "100%",
+                    }}
+                >
+                    <div
+                        style={{
+                            marginTop: "-50px",
+                            width: "200px",
+                            height: "200px",
+                            borderRadius: "50%",
+                            overflow: "hidden",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <img src={image} alt="Profile" style={{ width: "100%", height: "100%", borderRadius: "50%" }} />
+                    </div>
+                    <div>
+                        <br /><br />
+                        <h1>{name}</h1>
+                        <br />
+                        </div> 
+                    <div>{job}</div>
+                </div>
+            </div>
+        );
+    }
+
+    function App() { 
+        return ( 
+            <div> 
+                <ProFile name="이채은" image={'char.webp'} job="full stack developer"/> 
+                <ProFile name="서정연" image={'char.webp'} job="iOS developer"/>  
+            </div>
+        );
+    }
+    
+    ReactDOM.render(<App/>, root); 
+</script>
+</html>
