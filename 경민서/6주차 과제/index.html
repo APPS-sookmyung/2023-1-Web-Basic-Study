@@ -13,12 +13,15 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <script type="text/babel">
-    function Profile({name, role, profilePhoto}) {
+    function Profile({name, role, profilePhoto, newTag}) {
       return (
         <div className="profile">
           <img className="photo" src={profilePhoto}></img>
-          <h3>{name}</h3>
+          <h2>{name}</h2>
           <p>{role}</p>
+          {newTag && 
+            <span className="new">new</span>
+          }
         </div>
       );
     }
@@ -26,7 +29,7 @@
     function App() {
       return (
         <div>
-          <Profile name="James Kim" role="프론트엔드 개발자" profilePhoto="JamesKim.jpg" />
+          <Profile name="James Kim" role="프론트엔드 개발자" profilePhoto="JamesKim.jpg" newTag={true} />
           <Profile name="Anna Young" role="백엔드 개발자" profilePhoto="AnnaYoung.jpg" />
           <Profile name="Kyle Yu" role="기획자" profilePhoto="KyleYu.jpg" />
         </div>
