@@ -3,32 +3,39 @@
 <body>
     <div id="root"></div>
 </body>
-<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
-    function App() {
-        const [minutes, setMinutes] = React.useState();
-        const onChange = (event) => {
-            setMinutes(event.target.value)
-        };
+    function Btn(props) {
         return (
-            <div>
-                <h1>Super Converter</h1>
-                <label htmlFor="minutes">Minutes</label>
-                <input 
-                    value={minutes} 
-                    id="minutes" 
-                    placeholder="Minutes" 
-                    type="number" 
-                    onChange={onChange}
-                />
-                <h4>You want to converte {minutes}</h4>
-                <label htmlFor="hours">Hours</label>
-                <input id="hours" placeholder="Hours" type="number" />
-            </div>
+            <button 
+                style={{
+                    backgroundColor:"tomato",
+                    color:"white",
+                    padding:"10px 20px",
+                    border:0,
+                    borderRadius:10,
+                    fontSize: props.fontSize
+                }}>
+                    {props.text}
+            </button>
         );
     }
+    Btn.propTypes = {
+        text: PropTypes.string.isRequired,
+        fontSize: PropTypes.number,
+    };
+    function App() {
+        return (
+            <div>
+                <Btn text="Save Changes" fontSize={18} />
+                <Btn text="Continue" />
+            </div> 
+        );
+    }
+    
     const root = document.getElementById("root");
     ReactDOM.render(<App />, root);
 </script>
