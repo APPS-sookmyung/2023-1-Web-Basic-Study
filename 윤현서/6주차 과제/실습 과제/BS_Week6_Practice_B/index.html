@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./App.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- import react & react-dom -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+  <script type="text/babel">
+    function Profile({ profileimg, Name, Role, isNew }) {
+      return (
+        <div className="profile">
+          {isNew && <div className="new">New</div>}
+          <img className="photo" src={profileimg} alt="image" />
+          <h1>{Name}</h1>
+          <p>{Role}</p>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Profile
+            profileimg="img/profile1.jpg"
+            Name="Kim"
+            Role="프론트엔드 개발자"
+            isNew={true}
+          />
+          <Profile
+            profileimg="img/profile2.jpg"
+            Name="Lee"
+            Role="백엔드 개발자"
+            isNew={true}
+          />
+          <Profile
+            profileimg="img/profile3.jpg"
+            Name="Jang"
+            Role="웹 개발자"
+            isNew={false}
+          />
+        </div>
+      );
+    }
+
+    const root = document.querySelector("#root");
+    ReactDOM.createRoot(root).render(<App />);
+  </script>
+</html>
