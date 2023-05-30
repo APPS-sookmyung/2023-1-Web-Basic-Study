@@ -1,0 +1,34 @@
+body {
+	font-family: "Courier New", Courier, monospace;
+}
+
+.layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+	height: 100vh;
+}
+
+.layout .change-color-button {
+	padding: 10px;
+	border: none;
+	border-radius: 8px;
+	background-color: #92b2ff;
+	font-size: 18px;
+	color: #ffffff;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	font-family: inherit;
+}
+
+.layout .change-color-button:hover {
+	font-size: 17px;
+	background-color: #5083ff;
+}
+
+.layout .count-text {
+	font-size: 24px;
+}

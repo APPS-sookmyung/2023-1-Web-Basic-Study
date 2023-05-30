@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./App.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- import react & react-dom -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+  <script type="text/babel">
+    function Profile({ name, job, isNewcomer, profileImageUrl }) {
+      return (
+        <div className="profile">
+          {isNewcomer && <div className="new">new</div>}
+          <img className="photo" src={profileImageUrl} alt="image" />
+          <h1>{name}</h1>
+          <p>{job}</p>
+        </div>
+      );
+    }
+
+    function App() {
+      const profileList = [
+        {
+          id: 1,
+          name: 'James Kim',
+          job: '프론트엔드 개발자',
+          isNewcomer: true,
+          profileImageUrl:
+            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+        },
+        {
+          id: 2,
+          name: 'Anna Young',
+          job: '백엔드 개발자',
+          isNewcomer: false,
+          profileImageUrl:
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+        },
+        {
+          id: 3,
+          name: 'Kyle Yu',
+          job: '기획자',
+          isNewcomer: false,
+          profileImageUrl:
+            'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+        },
+      ];
+
+      return (
+        <div>
+          {profileList.map(({ id, name, job, isNewcomer, profileImageUrl }) => (
+            <Profile
+              key={id}
+              name={name}
+              job={job}
+              isNewcomer={isNewcomer}
+              profileImageUrl={profileImageUrl}
+            />
+          ))}
+        </div>
+      );
+    }
+
+    const root = document.querySelector('#root');
+    ReactDOM.createRoot(root).render(<App />);
+  </script>
+</html>
