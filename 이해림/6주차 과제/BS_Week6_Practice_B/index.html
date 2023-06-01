@@ -15,29 +15,17 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
 <script type="text/babel">
-    function Profile1() { return (
+    function Profile(props) { return (
     <div className="profile">
-        <img className="photo" src="image/James Kim.jpg" />
-        <h1>James Kim</h1>
-        <p>프론트엔드 개발자</p>
-    </div>
-    );} function Profile2() { return (
-    <div className="profile">
-        <img className="photo" src="image/Anna Young.jpg" />
-        <h1>Anna Young</h1>
-        <p>백엔드 개발자</p>
-    </div>
-    );} function Profile3() { return (
-    <div className="profile">
-        <img className="photo" src="image/Kyle Yu.jpg" />
-        <h1>Kyle Yu</h1>
-        <p>기획자</p>
+        <img className="photo" src={props.photo} />
+        <h1>{props.name}</h1>
+        <p>{props.role}</p>
     </div>
     ); } function App() { return (
     <div>
-        <Profile1 />
-        <Profile2 />
-        <Profile3 />
+        <Profile photo="image/James Kim.jpg" name="James Kim" role="프론트엔드 개발자" />
+        <Profile photo="image/Anna Young.jpg" name="Anna Young" role="백엔드 개발자" />
+        <Profile photo="image/Kyle Yu.jpg" name="Kyle Yu" role="기획자" />
     </div>
     ); } const root = document.querySelector("#root"); ReactDOM.createRoot(root).render(
     <App />);
