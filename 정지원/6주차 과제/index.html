@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./App.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- import react & react-dom -->
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+  <script type="text/babel">
+    const { useState } = React;
+    const { ReactDOM } = window;
+
+    function Profile(props) {
+      const imageUrl1 =
+        "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80";
+      const imageUrl2 =
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80";
+      const imageUrl3 =
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80";
+
+      return (
+        <div>
+          <div className="profile">
+            {props.isNew && <div className="new">NEW</div>}
+            <img className="photo" src={imageUrl1} alt="image" />
+            <h1>James Kim</h1>
+            <p>프론트엔드 개발자</p>
+          </div>
+          <div className="profile">
+            <img className="photo" src={imageUrl2} alt="image" />
+            <h1>John Smith</h1>
+            <p>백엔드 개발자</p>
+          </div>
+          <div className="profile">
+            <img className="photo" src={imageUrl3} alt="image" />
+            <h1>Jane Lee</h1>
+            <p>데이터 과학자</p>
+          </div>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Profile isNew={true} />
+        </div>
+      );
+    }
+
+    const root = document.querySelector("#root");
+    ReactDOM.createRoot(root).render(<App />);
+  </script>
+</html>
+
